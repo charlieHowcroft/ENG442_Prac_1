@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Apr 10 10:12:39 2023
+# Process ID: 15420
+# Current directory: C:/Users/chuck/OneDrive/Desktop/ENG442/lab_1_implementation/lab_1_implementation.runs/synth_1
+# Command line: vivado.exe -log controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source controller.tcl
+# Log file: C:/Users/chuck/OneDrive/Desktop/ENG442/lab_1_implementation/lab_1_implementation.runs/synth_1/controller.vds
+# Journal file: C:/Users/chuck/OneDrive/Desktop/ENG442/lab_1_implementation/lab_1_implementation.runs/synth_1\vivado.jou
+# Running On: LAPTOP-NAQO2U6M, OS: Windows, CPU Frequency: 1996 MHz, CPU Physical cores: 8, Host memory: 7968 MB
+#-----------------------------------------------------------
+source controller.tcl -notrace

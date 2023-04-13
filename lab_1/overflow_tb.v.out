@@ -1,0 +1,114 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000021025e9aba0 .scope module, "overflow_tb" "overflow_tb" 2 3;
+ .timescale 0 0;
+v0000021025da4770_0 .var "a", 0 0;
+v0000021025da3af0_0 .var "b", 0 0;
+v0000021025da4090_0 .net "overflow", 0 0, L_0000021025def320;  1 drivers
+v0000021025da3eb0_0 .var "result", 0 0;
+S_0000021025e9ba20 .scope module, "overflow_dut" "overflow" 2 8, 3 1 0, S_0000021025e9aba0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "result";
+    .port_info 3 /OUTPUT 1 "overflow";
+L_0000021025e9bcf0 .functor NOT 1, v0000021025da4770_0, C4<0>, C4<0>, C4<0>;
+L_0000021025da5cf0 .functor NOT 1, v0000021025da3af0_0, C4<0>, C4<0>, C4<0>;
+L_0000021025def390 .functor AND 1, L_0000021025e9bcf0, L_0000021025da5cf0, C4<1>, C4<1>;
+L_0000021025def710 .functor AND 1, L_0000021025def390, v0000021025da3eb0_0, C4<1>, C4<1>;
+L_0000021025def780 .functor AND 1, v0000021025da4770_0, v0000021025da3af0_0, C4<1>, C4<1>;
+L_0000021025def080 .functor NOT 1, v0000021025da3eb0_0, C4<0>, C4<0>, C4<0>;
+L_0000021025def6a0 .functor AND 1, L_0000021025def780, L_0000021025def080, C4<1>, C4<1>;
+L_0000021025def320 .functor OR 1, L_0000021025def710, L_0000021025def6a0, C4<0>, C4<0>;
+v0000021025d733a0_0 .net *"_ivl_0", 0 0, L_0000021025e9bcf0;  1 drivers
+v0000021025e9ad30_0 .net *"_ivl_10", 0 0, L_0000021025def080;  1 drivers
+v0000021025e9bbb0_0 .net *"_ivl_12", 0 0, L_0000021025def6a0;  1 drivers
+v0000021025e9bc50_0 .net *"_ivl_2", 0 0, L_0000021025da5cf0;  1 drivers
+v0000021025d72d20_0 .net *"_ivl_4", 0 0, L_0000021025def390;  1 drivers
+v0000021025d72dc0_0 .net *"_ivl_6", 0 0, L_0000021025def710;  1 drivers
+v0000021025d72e60_0 .net *"_ivl_8", 0 0, L_0000021025def780;  1 drivers
+v0000021025d72f00_0 .net "a", 0 0, v0000021025da4770_0;  1 drivers
+v0000021025d72fa0_0 .net "b", 0 0, v0000021025da3af0_0;  1 drivers
+v0000021025da3910_0 .net "overflow", 0 0, L_0000021025def320;  alias, 1 drivers
+v0000021025da3a50_0 .net "result", 0 0, v0000021025da3eb0_0;  1 drivers
+    .scope S_0000021025e9aba0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %vpi_call 2 14 "$display", "a\011b\011result\011overflow" {0 0 0};
+    %vpi_call 2 15 "$monitor", "%b\011%b\011%b\011\011%b", v0000021025da4770_0, v0000021025da3af0_0, v0000021025da3eb0_0, v0000021025da4090_0 {0 0 0};
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da4770_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da3af0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000021025da3eb0_0, 0, 1;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "overflow_tb.v";
+    "./overflow.v";
